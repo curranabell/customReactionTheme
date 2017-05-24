@@ -4,6 +4,7 @@ import classnames from "classnames";
 import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
+import homeBanner from "../../components/homeBanner";
 
 class coreLayoutMaterialTheme extends Component {
   static propTypes = {
@@ -30,6 +31,7 @@ class coreLayoutMaterialTheme extends Component {
         { Template[template] &&
           <main>
             <div className="rui materialtheme">
+              <homeBanner />
             </div>
             <Blaze template={template} />
           </main>

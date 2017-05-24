@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
+import Paper from "material-ui/Paper";
 
-// Create a react component
-class homeBanner extends Component {
-  render() {
-    return (
+    const style = {
+      height: 100,
+      width: 100,
+      margin: 20,
+      textAlign: 'center',
+      display: 'inline-block',
+    };
+
+    const homeBanner = () => (
       <div>
-        <h1>Testing Home Banner</h1>
+        <Paper style={style} zDepth={2} />
+        <h1>Testing Testing</h1>
       </div>
-    )
-  }
-}
+    );
 
 // Register react component.
 // Now MyComponent can be accessed anywhere on the client with the name "my-react-component"
