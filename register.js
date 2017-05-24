@@ -2,23 +2,15 @@ import { Reaction } from "/server/api";
 
 // Register package as ReactionCommerce package
 Reaction.registerPackage({
-  label: "Bees Knees",
-  name: "beesknees",
+  label: "Material Theme",
+  name: "material-theme",
   icon: "fa fa-vine",
   meta: {
     version: "1.0.0"
   },
   autoEnable: true,
-  registry: [
-    {
-      route: "/about",
-      name: "about",
-      template: "aboutUs",
-      workflow: "coreWorkflow"
-    }
-  ],
   layout: [{
-    layout: "coreLayoutBeesknees",
+    layout: "coreLayoutMaterialTheme",
     workflow: "coreProductGridWorkflow",
     collection: "Products",
     theme: "default",
@@ -27,7 +19,7 @@ Reaction.registerPackage({
     structure: {
       template: "productsLanding",
       layoutHeader: "layoutHeader",
-      layoutFooter: "layoutFooterBeesKnees",
+      layoutFooter: "layoutFooterMaterialTheme",
       notFound: "productNotFound",
       dashboardHeader: "",
       dashboardControls: "dashboardControls",
@@ -36,4 +28,3 @@ Reaction.registerPackage({
     } }
   ]
 });
-

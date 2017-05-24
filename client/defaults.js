@@ -1,5 +1,14 @@
 import { Session } from "meteor/session";
-import { Logger } from "/client/api";
+import { customHomePage } from "./templates/layouts/customHomePage";
 
-Session.set("DEFAULT_LAYOUT", "coreLayoutBeesknees");
-Logger.info("setting DEFAULT_LAYOUT");
+Session.set("DEFAULT_LAYOUT", "coreLayoutMaterialTheme");
+Session.set("DEFAULT_WORKFLOW", "coreWorkflow");
+
+Session.set("INDEX_OPTIONS", {
+  template: "customHomePage",
+  layoutHeader: "layoutHeader",
+  layoutFooter: "layoutFooter",
+  notFound: "notFound",
+  dashboardControls: "dashboardControls",
+  adminControlsFooter: "adminControlsFooter"
+});

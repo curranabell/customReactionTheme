@@ -5,7 +5,7 @@ import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
 
-class coreLayoutMaterialTheme extends Component {
+class customHomePage extends Component {
   static propTypes = {
     actionViewIsOpen: PropTypes.bool,
     data: PropTypes.object,
@@ -27,13 +27,11 @@ class coreLayoutMaterialTheme extends Component {
 
         <Blaze template="cartDrawer" className="reaction-cart-drawer" />
 
-        { Template[template] &&
           <main>
-            <div className="rui materialtheme">
+            <div>
+              <h1> Testing Testing Testing</h1>
             </div>
-            <Blaze template={template} />
           </main>
-        }
 
       </div>
     );
@@ -42,8 +40,8 @@ class coreLayoutMaterialTheme extends Component {
 
 // Register component for it to be usable
 registerComponent({
-  name: "coreLayoutMaterialTheme",
-  component: coreLayoutMaterialTheme
+  name: "customHomePage",
+  component: customHomePage
 });
 
-export default coreLayoutMaterialTheme;
+export default customHomePage;
