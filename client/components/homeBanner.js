@@ -12,8 +12,10 @@ import Paper from "material-ui/Paper";
 
     const homeBanner = () => (
       <div>
-        <Paper style={style} zDepth={2} />
-        <h1>Testing Testing</h1>
+        <Paper style={style} zDepth={2}>
+          <h1>Testing Testing</h1>
+        </Paper>
+
       </div>
     );
 
