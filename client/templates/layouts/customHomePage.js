@@ -4,12 +4,16 @@ import classnames from "classnames";
 import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
+import homeBanner from "../../components/homeBanner";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+
 
 class customHomePage extends Component {
   static propTypes = {
     actionViewIsOpen: PropTypes.bool,
     data: PropTypes.object,
     structure: PropTypes.object
+
   }
 
   render() {
@@ -20,6 +24,7 @@ class customHomePage extends Component {
     });
 
     return (
+    <MuiThemeProvider>
       <div className={pageClassName} id="reactionAppContainer">
         { Template[layoutHeader] &&
           <Blaze template={layoutHeader} className="reaction-navigation-header" />
@@ -27,13 +32,17 @@ class customHomePage extends Component {
 
         <Blaze template="cartDrawer" className="reaction-cart-drawer" />
 
+        { Template[template] &&
           <main>
-            <div>
-              <h1> Testing Testing Testing</h1>
+            <div className="rui materialtheme">
+              <homeBanner />
             </div>
+            <Blaze template={template} />
           </main>
+        }
 
       </div>
+    </MuiThemeProvider>
     );
   }
 }

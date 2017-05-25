@@ -5,12 +5,15 @@ import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
 import homeBanner from "../../components/homeBanner";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+
 
 class coreLayoutMaterialTheme extends Component {
   static propTypes = {
     actionViewIsOpen: PropTypes.bool,
     data: PropTypes.object,
     structure: PropTypes.object
+
   }
 
   render() {
@@ -21,6 +24,7 @@ class coreLayoutMaterialTheme extends Component {
     });
 
     return (
+    <MuiThemeProvider>
       <div className={pageClassName} id="reactionAppContainer">
         { Template[layoutHeader] &&
           <Blaze template={layoutHeader} className="reaction-navigation-header" />
@@ -38,6 +42,7 @@ class coreLayoutMaterialTheme extends Component {
         }
 
       </div>
+    </MuiThemeProvider>
     );
   }
 }
