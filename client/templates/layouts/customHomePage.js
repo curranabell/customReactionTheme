@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
-import { registerComponent } from "/imports/plugins/core/layout/lib/components";
+import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
 import homeBanner from "../../components/homeBanner";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
@@ -23,6 +23,10 @@ class customHomePage extends Component {
       "show-settings": this.props.actionViewIsOpen
     });
 
+    const homeBanner = React.createElement(getComponent("home-banner"), {
+       // ... custom props
+     });
+
     return (
     <MuiThemeProvider>
       <div className={pageClassName} id="reactionAppContainer">
@@ -35,9 +39,7 @@ class customHomePage extends Component {
         { Template[template] &&
           <main>
             <div className="rui materialtheme">
-              <homeBanner />
             </div>
-            <Blaze template={template} />
           </main>
         }
 
