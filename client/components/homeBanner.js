@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
 import Paper from "material-ui/Paper";
 import RaisedButton from "material-ui/RaisedButton";
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from "react-flexbox-grid";
 
     const welcomeBanner = {
       flex: 1,
@@ -40,7 +40,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
               <RaisedButton label="Shop Category 1" primary={true} />
             </Paper>
             <Paper style={categoryBanner} zDepth={2}>
-              <h1>Category 1</h1>
+              <h1>Category 2</h1>
               <RaisedButton label="Shop Category 2" primary={true} />
             </Paper>
           </Col>

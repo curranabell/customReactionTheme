@@ -39,7 +39,9 @@ class customHomePage extends Component {
         { Template[template] &&
           <main>
             <div className="rui materialtheme">
+              {homeBanner}
             </div>
+            <Blaze template={template} />
           </main>
         }
 
