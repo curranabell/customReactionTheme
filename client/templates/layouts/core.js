@@ -27,7 +27,7 @@ class coreLayoutMaterialTheme extends Component {
     const homeBanner = React.createElement(getComponent("home-banner"), {
        // ... custom props
      });
-     const homeFacts = React.createElement(getComponent("home-products"), {
+     const homeFacts = React.createElement(getComponent("home-facts"), {
         // ... custom props
       });
 
@@ -43,10 +43,9 @@ class coreLayoutMaterialTheme extends Component {
         { Template[template] &&
           <main>
             <div className="rui materialtheme">
-              {homeBanner}
+              <div>{homeBanner}</div>
+              <div>{homeFacts}</div>
             </div>
-
-            <div>{homeFacts}</div>
 
             <Blaze template={template} />
           </main>

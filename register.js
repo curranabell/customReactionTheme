@@ -9,6 +9,13 @@ Reaction.registerPackage({
     version: "1.0.0"
   },
   autoEnable: true,
+  registry: [{
+      route: "/",
+      name: "customHomePage",
+      priority: 20,
+      workflow: "coreWorkflow",
+  }],
+
   layout: [{
     layout: "coreLayoutMaterialTheme",
     workflow: "coreProductGridWorkflow",

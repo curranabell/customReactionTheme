@@ -5,6 +5,7 @@ import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
 import homeBanner from "../../components/homeBanner";
+import homeFacts from "../../components/homeFacts";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 
@@ -26,6 +27,9 @@ class customHomePage extends Component {
     const homeBanner = React.createElement(getComponent("home-banner"), {
        // ... custom props
      });
+     const homeFacts = React.createElement(getComponent("home-facts"), {
+        // ... custom props
+      });
 
     return (
     <MuiThemeProvider>
@@ -39,8 +43,10 @@ class customHomePage extends Component {
         { Template[template] &&
           <main>
             <div className="rui materialtheme">
-              {homeBanner}
+              <div>{homeBanner}</div>
+              <div>{homeFacts}</div>
             </div>
+
             <Blaze template={template} />
           </main>
         }

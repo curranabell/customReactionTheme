@@ -40,7 +40,7 @@ import { Grid, Row, Col } from "react-flexbox-grid";
               <RaisedButton label="Shop Category 1" primary={true} />
             </Paper>
             <Paper style={categoryBanner} zDepth={2}>
-              <h1>Category 2</h1>
+              <h1>Category 1</h1>
               <RaisedButton label="Shop Category 2" primary={true} />
             </Paper>
           </Col>
