@@ -1,63 +1,55 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import Blaze from "meteor/gadicc:blaze-react-component";
-import { Template } from "meteor/templating";
-import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
-import homeBanner from "../../components/homeBanner";
-import homeFacts from "../../components/homeFacts";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import { registerComponent } from "/imports/plugins/core/layout/lib/components";
+import Paper from "material-ui/Paper";
+import RaisedButton from "material-ui/RaisedButton";
+import { Grid, Row, Col } from "react-flexbox-grid";
+
+    const welcomeBanner = {
+      flex: 1,
+      height: 420,
+      padding: 20,
+      paddingTop: 100,
+      margin: 20,
+      textAlign: 'center',
+      backgroundColor: 'white' ,
+    };
+
+    const categoryBanner = {
+      flex: 1,
+      height: 200,
+      padding: 20,
+      margin: 20,
+      textAlign: 'center',
+      backgroundColor: 'white' ,
+    };
 
 
-class customHomePage extends Component {
-  static propTypes = {
-    actionViewIsOpen: PropTypes.bool,
-    data: PropTypes.object,
-    structure: PropTypes.object
-
-  }
-
-  render() {
-    const { layoutHeader, template } = this.props.structure || {};
-    const pageClassName = classnames({
-      "page": true,
-      "show-settings": this.props.actionViewIsOpen
-    });
-
-    const homeBanner = React.createElement(getComponent("home-banner"), {
-       // ... custom props
-     });
-     const homeFacts = React.createElement(getComponent("home-facts"), {
-        // ... custom props
-      });
-
-    return (
-    <MuiThemeProvider>
-      <div className={pageClassName} id="reactionAppContainer">
-        { Template[layoutHeader] &&
-          <Blaze template={layoutHeader} className="reaction-navigation-header" />
-        }
-
-        <Blaze template="cartDrawer" className="reaction-cart-drawer" />
-
-        { Template[template] &&
-          <main>
-            <div className="rui materialtheme">
-              <div>{homeBanner}</div>
-              <div>{homeFacts}</div>
-            </div>
-
-            <Blaze template={template} />
-          </main>
-        }
-
-      </div>
-    </MuiThemeProvider>
+    const customHomePage = () => (
+      <Grid fluid>
+        <Row center="md">
+          <Col md={8}>
+            <Paper style={welcomeBanner} zDepth={2}>
+              <h1>Welcome To Our Shop</h1>
+              <h3>We specialize in category 1 and category 2</h3>
+              <RaisedButton label="Shop" primary={true} />
+            </Paper>
+          </Col>
+          <Col md={4}>
+            <Paper style={categoryBanner} zDepth={2}>
+              <h1>Category 1</h1>
+              <RaisedButton label="Shop Category 1" primary={true} />
+            </Paper>
+            <Paper style={categoryBanner} zDepth={2}>
+              <h1>Category 1</h1>
+              <RaisedButton label="Shop Category 2" primary={true} />
+            </Paper>
+          </Col>
+        </Row>
+      </Grid>
     );
-  }
-}
 
-// Register component for it to be usable
+// Register react component.
+// Now MyComponent can be accessed anywhere on the client with the name "my-react-component"
 registerComponent({
   name: "customHomePage",
   component: customHomePage

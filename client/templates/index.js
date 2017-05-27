@@ -10,6 +10,7 @@ import "./layouts/customHomePage";
 // products
 import "./products/productsLanding.html";
 import "./products/productsLanding";
+import "./products/productsLayout";
 
 
 // static

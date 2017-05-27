@@ -6,6 +6,7 @@ import { Template } from "meteor/templating";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
 import homeBanner from "../../components/homeBanner";
 import homeFacts from "../../components/homeFacts";
+import productsLayout from "../products/productsLayout";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 
@@ -30,6 +31,9 @@ class coreLayoutMaterialTheme extends Component {
      const homeFacts = React.createElement(getComponent("home-facts"), {
         // ... custom props
       });
+      const productsLayout = React.createElement(getComponent("products-layout"), {
+         // ... custom props
+       });
 
     return (
     <MuiThemeProvider>
@@ -45,6 +49,7 @@ class coreLayoutMaterialTheme extends Component {
             <div className="rui materialtheme">
               <div>{homeBanner}</div>
               <div>{homeFacts}</div>
+              <div>{productsLayout}</div>
             </div>
 
             <Blaze template={template} />
