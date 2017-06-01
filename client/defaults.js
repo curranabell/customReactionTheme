@@ -7,12 +7,10 @@ Session.set("DEFAULT_WORKFLOW", "coreWorkflow");
 Session.set("INDEX_OPTIONS", {
   workflow: "coreWorkflow",
   layout: "coreLayoutMaterialTheme",
-  structure: {
-    template: "customHomePage",
-    layoutHeader: "layoutHeader",
-    layoutFooter: "layoutFooter",
-    notFound: "notFound",
-    dashboardControls: "dashboardControls",
-    adminControlsFooter: "adminControlsFooter"
-  }
+  template: "customHomePage",
+  layoutHeader: "layoutHeader",
+  layoutFooter: "layoutFooter",
+  notFound: "notFound",
+  dashboardControls: "dashboardControls",
+  adminControlsFooter: "adminControlsFooter"
 });

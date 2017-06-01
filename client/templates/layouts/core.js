@@ -8,6 +8,7 @@ import homeBanner from "../../components/homeBanner";
 import homeFacts from "../../components/homeFacts";
 import productsLayout from "../products/productsLayout";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import customHomePage from "./customHomePage";
 
 
 class coreLayoutMaterialTheme extends Component {
@@ -25,19 +26,10 @@ class coreLayoutMaterialTheme extends Component {
       "show-settings": this.props.actionViewIsOpen
     });
 
-    const homeBanner = React.createElement(getComponent("home-banner"), {
-       // ... custom props
-     });
-     const homeFacts = React.createElement(getComponent("home-facts"), {
-        // ... custom props
-      });
-      const productsLayout = React.createElement(getComponent("products-layout"), {
-         // ... custom props
-       });
 
-    return (
-    <MuiThemeProvider>
-      <div className={pageClassName} id="reactionAppContainer">
+       return (
+       <MuiThemeProvider>
+       <div className={pageClassName} id="reactionAppContainer">
         { Template[layoutHeader] &&
           <Blaze template={layoutHeader} className="reaction-navigation-header" />
         }
@@ -47,18 +39,15 @@ class coreLayoutMaterialTheme extends Component {
         { Template[template] &&
           <main>
             <div className="rui materialtheme">
-              <div>{homeBanner}</div>
-              <div>{homeFacts}</div>
-              <div>{productsLayout}</div>
             </div>
-
+            <homeBanner />
             <Blaze template={template} />
           </main>
         }
 
-      </div>
-    </MuiThemeProvider>
-    );
+       </div>
+       </MuiThemeProvider>
+       );
   }
 }
 

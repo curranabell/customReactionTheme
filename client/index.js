@@ -1,5 +1,6 @@
 import "./templates";
 import "./defaults";
-import "./components/homeBanner";
+import "./components";
+import "./pages";
 import "./init";
 import "./styles/layout.less";
