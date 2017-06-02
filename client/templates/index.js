@@ -6,7 +6,6 @@ import "./checkout/review/review";
 import "./layouts/core";
 import "./layouts/footer.html";
 import "./layouts/customHomePage";
-import "./layouts/customHomePage.html";
 
 // products
 import "./products/productsLanding.html";

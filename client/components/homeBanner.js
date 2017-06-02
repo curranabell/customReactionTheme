@@ -3,9 +3,8 @@ import { registerComponent } from "/imports/plugins/core/layout/lib/components";
 import Paper from "material-ui/Paper";
 import RaisedButton from "material-ui/RaisedButton";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
-    injectTapEventPlugin();
+
 
     const welcomeBanner = {
       flex: 1,

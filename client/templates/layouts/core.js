@@ -4,11 +4,7 @@ import classnames from "classnames";
 import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
-import homeBanner from "../../components/homeBanner";
-import homeFacts from "../../components/homeFacts";
-import productsLayout from "../products/productsLayout";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import customHomePage from "./customHomePage";
 
 
 class coreLayoutMaterialTheme extends Component {
@@ -26,28 +22,40 @@ class coreLayoutMaterialTheme extends Component {
       "show-settings": this.props.actionViewIsOpen
     });
 
+    let element;
+    if (getComponent(template)) {
+      element = React.createElement(getComponent(template));
+    }
 
-       return (
-       <MuiThemeProvider>
-       <div className={pageClassName} id="reactionAppContainer">
-        { Template[layoutHeader] &&
-          <Blaze template={layoutHeader} className="reaction-navigation-header" />
-        }
+    return (
+    <MuiThemeProvider>
+    <div className={pageClassName} id="reactionAppContainer">
+     { Template[layoutHeader] &&
+       <Blaze template={layoutHeader} className="reaction-navigation-header" />
+     }
 
-        <Blaze template="cartDrawer" className="reaction-cart-drawer" />
+     <Blaze template="cartDrawer" className="reaction-cart-drawer" />
 
-        { Template[template] &&
-          <main>
-            <div className="rui materialtheme">
-            </div>
-            <homeBanner />
-            <Blaze template={template} />
-          </main>
-        }
+     { Template[template] &&
+       <main>
+         <div className="rui materialtheme">
 
-       </div>
-       </MuiThemeProvider>
-       );
+         </div>
+
+         <Blaze template={template} />
+       </main>
+     }
+     {
+       <main>
+
+       {element}
+
+       </main>
+     }
+
+    </div>
+    </MuiThemeProvider>
+    );
   }
 }
 
