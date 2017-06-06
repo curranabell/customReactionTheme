@@ -47,7 +47,9 @@ class customProductsLayout extends Component {
           </Col>
           <Col md={9}>
             <Paper style={gridStyles} zDepth={2}>
-              <Blaze template="productsLanding" className="products-landing" />
+              { Template[productsLanding] &&
+              <Blaze template={productsLanding} className="products-landing" />
+              }
             </Paper>
           </Col>
         </Row>

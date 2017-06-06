@@ -17,7 +17,7 @@ Reaction.registerPackage({
     enabled: true,
     priority: 1,
     structure: {
-      template: "productsLanding",
+      template: "customProductsLayout",
       layoutHeader: "layoutHeader",
       layoutFooter: "customFooter",
       notFound: "productNotFound",
