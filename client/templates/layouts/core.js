@@ -22,6 +22,10 @@ class coreLayoutMaterialTheme extends Component {
       "show-settings": this.props.actionViewIsOpen
     });
 
+    const customFooter = React.createElement(getComponent("customFooter"), {
+      // ... custom props
+    });
+
     let element;
     if (getComponent(template)) {
       element = React.createElement(getComponent(template));
@@ -43,8 +47,10 @@ class coreLayoutMaterialTheme extends Component {
          </div>
 
          <Blaze template={template} />
+         <div>{ customFooter }</div>
        </main>
      }
+
      {
        <main>
 
@@ -53,6 +59,7 @@ class coreLayoutMaterialTheme extends Component {
        </main>
      }
 
+     {}
     </div>
     </MuiThemeProvider>
     );

@@ -19,7 +19,7 @@ Reaction.registerPackage({
     structure: {
       template: "productsLanding",
       layoutHeader: "layoutHeader",
-      layoutFooter: "layoutFooterMaterialTheme",
+      layoutFooter: "customFooter",
       notFound: "productNotFound",
       dashboardHeader: "",
       dashboardControls: "dashboardControls",

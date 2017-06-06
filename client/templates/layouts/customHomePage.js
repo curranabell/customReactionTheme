@@ -9,9 +9,14 @@ import homeBanner from "../../components/homeHero";
           // ... custom props
         });
 
+        const customFooter = React.createElement(getComponent("customFooter"), {
+          // ... custom props
+        });
+
         return (
           <div>
             <div>{ homeHero }</div>
+            <div>{ customFooter }</div>
           </div>
       );
     }

@@ -9,7 +9,7 @@ Session.set("INDEX_OPTIONS", {
   layout: "coreLayoutMaterialTheme",
   template: "customHomePage",
   layoutHeader: "layoutHeader",
-  layoutFooter: "layoutFooter",
+  layoutFooter: "customFooter",
   notFound: "notFound",
   dashboardControls: "dashboardControls",
   adminControlsFooter: "adminControlsFooter"

@@ -22,22 +22,22 @@ import { Grid, Row, Col } from "react-flexbox-grid";
 
     const homeFacts = () => (
       <Grid fluid>
-        <Row center="sm" style={ factsRow }>
-          <Col lg={4}>
+        <Row center="md" style={ factsRow }>
+          <Col md={4}>
             <Paper style={categoryBanner} zDepth={2}>
-              <h1>Quality</h1>
+              <h1>Organic</h1>
               <h4>All Products Are Made With The Highest Quality 100% Organic Ingredients</h4>
             </Paper>
           </Col>
 
-          <Col lg={4}>
+          <Col md={4}>
             <Paper style={categoryBanner} zDepth={2}>
               <h1>Delivered To You</h1>
               <h4>Schedule Regular Deliveries With Fast And Secure Shipping</h4>
             </Paper>
           </Col>
 
-          <Col lg={4}>
+          <Col md={4}>
             <Paper style={categoryBanner} zDepth={2}>
               <h1>Trusted Suppliers</h1>
               <h4>Our Suppliers Have Been Working With Us For Over 30 Years</h4>
