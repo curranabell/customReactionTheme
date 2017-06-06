@@ -1,53 +1,36 @@
 import React from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
-import Paper from "material-ui/Paper";
 import RaisedButton from "material-ui/RaisedButton";
-import { Grid, Row, Col } from "react-flexbox-grid";
-
-
 
     const welcomeBanner = {
-      flex: 1,
-      height: 420,
-      padding: 20,
-      paddingTop: 100,
-      margin: 20,
-      textAlign: 'center',
-      backgroundColor: 'white' ,
+      display: 'flex',
+      height: '70vh',
     };
 
-    const categoryBanner = {
-      flex: 1,
-      height: 200,
-      padding: 20,
-      margin: 20,
+    const messageStyles = {
+      justifyContent: 'center',
       textAlign: 'center',
-      backgroundColor: 'white' ,
+      flex: 1,
+      alignItems: 'center',
+      alignSelf: 'center',
+      color: '#fefefe',
+      textShadow: 4,
+      marginTop: 50,
     };
 
+    const buttonStyles = {
+      marginTop: 40,
+      fontSize: 20,
+    };
 
     const homeBanner = () => (
-      <Grid fluid>
-        <Row center="md">
-          <Col md={8}>
-            <Paper style={welcomeBanner} zDepth={2}>
-              <h1>Welcome To Our Shop</h1>
-              <h3>We specialize in category 1 and category 2</h3>
-              <RaisedButton label="Shop" primary={true} />
-            </Paper>
-          </Col>
-          <Col md={4}>
-            <Paper style={categoryBanner} zDepth={2}>
-              <h1>Category 1</h1>
-              <RaisedButton label="Shop Category 1" primary={true} />
-            </Paper>
-            <Paper style={categoryBanner} zDepth={2}>
-              <h1>Category 1</h1>
-              <RaisedButton label="Shop Category 2" primary={true} />
-            </Paper>
-          </Col>
-        </Row>
-      </Grid>
+      <div style={welcomeBanner}>
+        <div style={ messageStyles}>
+          <h1>The Natural Medicine Pharmacy</h1>
+          <h3>Natural Medicine Delivered To Your Door</h3>
+          <RaisedButton style={ buttonStyles } label="Shop Now" primary={true} />
+        </div>
+      </div>
     );
 
 // Register react component.

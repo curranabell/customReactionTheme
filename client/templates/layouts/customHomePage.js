@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
-import homeBanner from "../../components/homeBanner";
-import homeFacts from "../../components/homeFacts";
-
+import homeBanner from "../../components/homeHero";
 
     class customHomePage extends Component {
       render () {
 
-        const homeBanner = React.createElement(getComponent("home-banner"), {
+        const homeHero = React.createElement(getComponent("home-hero"), {
           // ... custom props
-        });
-        const homeFacts = React.createElement(getComponent("home-facts"), {
-             // ... custom props
         });
 
         return (
           <div>
-            <div>{ homeBanner }</div>
-            <div>{ homeFacts }</div>
+            <div>{ homeHero }</div>
           </div>
       );
     }

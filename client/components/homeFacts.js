@@ -1,43 +1,46 @@
 import React from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
 import Paper from "material-ui/Paper";
-import RaisedButton from "material-ui/RaisedButton";
 import { Grid, Row, Col } from "react-flexbox-grid";
 
     const categoryBanner = {
-      flex: 1,
-      height: 200,
+      height: 150,
       padding: 20,
       margin: 20,
       textAlign: 'center',
-      backgroundColor: 'white' ,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)' ,
+      color: '#fefefe',
     };
 
+    const factsRow = {
+      alignItems: 'flex-end',
+      display: 'flex',
+      justifyContent: 'center',
+      marginTop: 'auto',
+      height: '20vh',
+    };
 
     const homeFacts = () => (
       <Grid fluid>
-        <Row center="md">
+        <Row center="sm" style={ factsRow }>
           <Col lg={4}>
             <Paper style={categoryBanner} zDepth={2}>
-              <h1>Heading 1</h1>
-              <h3>Shop with us because...</h3>
-              <RaisedButton label="Shop" primary={true} />
+              <h1>Quality</h1>
+              <h4>All Products Are Made With The Highest Quality 100% Organic Ingredients</h4>
             </Paper>
           </Col>
 
           <Col lg={4}>
             <Paper style={categoryBanner} zDepth={2}>
-              <h1>Heading 2</h1>
-              <h3>Shop with us because...</h3>
-              <RaisedButton label="Shop" primary={true} />
+              <h1>Delivered To You</h1>
+              <h4>Schedule Regular Deliveries With Fast And Secure Shipping</h4>
             </Paper>
           </Col>
 
           <Col lg={4}>
             <Paper style={categoryBanner} zDepth={2}>
-              <h1>Heading 3</h1>
-              <h3>Shop with us because...</h3>
-              <RaisedButton label="Shop" primary={true} />
+              <h1>Trusted Suppliers</h1>
+              <h4>Our Suppliers Have Been Working With Us For Over 30 Years</h4>
             </Paper>
           </Col>
 
