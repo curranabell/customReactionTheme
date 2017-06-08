@@ -11,7 +11,8 @@ import "./layouts/customFooter";
 // products
 import "./products/productsLanding.html";
 import "./products/productsLanding";
-import "./products/customProductsLayout";
+import "./products/productGrid/customProductGrid.html";
+import "./products/productGrid/customProductGrid";
 
 
 // static

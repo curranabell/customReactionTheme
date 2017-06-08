@@ -16,7 +16,7 @@ import homeBanner from "./homeBanner";
           backgroundImage: "url(' /images/waterfall-full.jpeg ')",
           backgroundSize: 'cover',
           alignItems: 'center',
-          height: '94vh',
+          height: '94.9vh',
           width: 'auto',
           flex: 1,
       };
