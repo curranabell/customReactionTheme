@@ -124,3 +124,9 @@ Template.productGrid.helpers({
     return Template.currentData().products;
   }
 });
+
+
+Template.customProductGrid.replaces("productGrid");
+Template.customProductGrid.inheritsHelpersFrom("productGrid");
+Template.customProductGrid.inheritsEventsFrom("productGrid");
+Template.customProductGrid.inheritsHooksFrom("productGrid");

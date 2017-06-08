@@ -45,7 +45,7 @@ Reaction.registerPackage({
     structure: {
       template: "customProductGrid",
       layoutHeader: "layoutHeader",
-      layoutFooter: "",
+      layoutFooter: "customFooter",
       notFound: "productNotFound",
       dashboardHeader: "gridPublishControls",
       dashboardControls: "productDetailDashboardControls",
