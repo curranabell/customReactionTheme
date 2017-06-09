@@ -3,13 +3,19 @@ import { registerComponent, getComponent } from "/imports/plugins/core/layout/li
 
     class customFooter extends Component {
       render () {
+
         const footerStyles = {
           color: '#000',
           paddingTop: 50,
           paddingBottom: 50,
         };
+
+        const containerStyles = {
+            backgroundColor: '#f3f3f3',
+        };
+
         return (
-          <div className="container">
+          <div className="container" style={ containerStyles }>
             <div className="row" style={ footerStyles }>
               <div className="col-md-4">
                 <h3>COMPANY:</h3>
