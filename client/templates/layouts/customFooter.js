@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
-import { Grid, Row, Col } from "react-flexbox-grid";
 
     class customFooter extends Component {
       render () {
@@ -10,26 +9,26 @@ import { Grid, Row, Col } from "react-flexbox-grid";
           paddingBottom: 50,
         };
         return (
-          <Grid>
-            <Row  style={ footerStyles }>
-              <Col md={4}>
+          <div className="container">
+            <div className="row" style={ footerStyles }>
+              <div className="col-md-4">
                 <h3>COMPANY:</h3>
                 <p>HOME</p>
                 <p>ABOUT</p>
-              </Col>
+              </div>
 
-              <Col md={4}>
+              <div className="col-md-4">
               <h3>CONTACT:</h3>
               <p>CONTACT @ NATURALMEDICINEPHARMACY.COM</p>
               <p>KILAUEA, HAWAII 96754 USA</p>
-              </Col>
+              </div>
 
-              <Col md={4}>
+              <div className="col-md-4">
                 <h3>NATURAL MEDICINE PHARMACY</h3>
                 <img src="/images/nalu-logo.png" />
-              </Col>
-            </Row>
-          </Grid>
+              </div>
+            </div>
+          </div>
       );
     }
   }

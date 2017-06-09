@@ -187,7 +187,7 @@ Template.products.events({
 //Add productFilter React Component in productsLanding Blaze Template
 
 Template.products.helpers({
-  productFilter() {
+  productFilterComponent() {
     return productFilter;
   }
 });

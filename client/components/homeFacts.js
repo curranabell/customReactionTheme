@@ -1,9 +1,7 @@
 import React from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
-import Paper from "material-ui/Paper";
-import { Grid, Row, Col } from "react-flexbox-grid";
 
-    const categoryBanner = {
+    const factsStyles = {
       height: 150,
       padding: 20,
       margin: 20,
@@ -21,31 +19,32 @@ import { Grid, Row, Col } from "react-flexbox-grid";
     };
 
     const homeFacts = () => (
-      <Grid fluid>
-        <Row center="md" style={ factsRow }>
-          <Col md={4}>
-            <Paper style={categoryBanner} zDepth={2}>
+      <div className="container-fluid">
+        <div className="row" style={ factsRow }>
+
+          <div className="col-md-4">
+            <div style={factsStyles}>
               <h1>Organic</h1>
               <h4>All Products Are Made With The Highest Quality 100% Organic Ingredients</h4>
-            </Paper>
-          </Col>
+            </div>
+          </div>
 
-          <Col md={4}>
-            <Paper style={categoryBanner} zDepth={2}>
+          <div className="col-md-4">
+            <div style={factsStyles}>
               <h1>Delivered To You</h1>
               <h4>Schedule Regular Deliveries With Fast And Secure Shipping</h4>
-            </Paper>
-          </Col>
+            </div>
+          </div>
 
-          <Col md={4}>
-            <Paper style={categoryBanner} zDepth={2}>
+          <div className="col-md-4">
+            <div style={factsStyles}>
               <h1>Trusted Suppliers</h1>
               <h4>Our Suppliers Have Been Working With Us For Over 30 Years</h4>
-            </Paper>
-          </Col>
+            </div>
+          </div>
 
-        </Row>
-      </Grid>
+        </div>
+      </div>
     );
 
 // Register react component.

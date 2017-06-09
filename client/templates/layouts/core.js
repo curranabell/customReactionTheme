@@ -5,8 +5,6 @@ import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { Grid, Row, Col } from "react-flexbox-grid";
-
 
 class coreLayoutMaterialTheme extends Component {
   static propTypes = {
@@ -43,10 +41,6 @@ class coreLayoutMaterialTheme extends Component {
 
      { Template[template] &&
        <main>
-         <div className="rui materialtheme">
-
-         </div>
-
          <Blaze template={template} />
          <div>{ customFooter }</div>
        </main>

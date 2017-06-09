@@ -1,6 +1,5 @@
 import React from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
-import RaisedButton from "material-ui/RaisedButton";
 
     const welcomeBanner = {
       display: 'flex',
@@ -21,14 +20,16 @@ import RaisedButton from "material-ui/RaisedButton";
     const buttonStyles = {
       marginTop: 40,
       fontSize: 20,
+      backgroundColor: '#00bcd4',
+      color: '#fefefe',
     };
 
     const homeBanner = () => (
-      <div style={welcomeBanner}>
-        <div style={ messageStyles}>
+      <div style={ welcomeBanner }>
+        <div style={ messageStyles }>
           <h1>The Natural Medicine Pharmacy</h1>
           <h3>Natural Medicine Delivered To Your Door</h3>
-          <RaisedButton style={ buttonStyles } label="Shop Now" primary={true} />
+          <button className="btn" style={ buttonStyles }>SHOP NOW</button>
         </div>
       </div>
     );

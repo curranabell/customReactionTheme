@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
-import Paper from "material-ui/Paper";
-import RaisedButton from "material-ui/RaisedButton";
-import { Grid, Row, Col } from "react-flexbox-grid";
 import homeFacts from "./homeFacts";
 import homeBanner from "./homeBanner";
 
@@ -10,15 +7,11 @@ import homeBanner from "./homeBanner";
     render () {
 
       const heroStyles = {
-          display: 'flex',
-          flexWrap: 'wrap',
           justifyContent: 'center',
           backgroundImage: "url(' /images/waterfall-full.jpeg ')",
-          backgroundSize: 'cover',
           alignItems: 'center',
           height: '94.9vh',
           width: 'auto',
-          flex: 1,
       };
 
       const backgroundOverlay = {
