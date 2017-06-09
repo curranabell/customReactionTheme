@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
 import homeBanner from "../../components/homeHero";
+import homeCategories from "../../components/homeCategories";
 
     class customHomePage extends Component {
       render () {
 
         const homeHero = React.createElement(getComponent("home-hero"), {
+          // ... custom props
+        });
+
+        const homeCategories = React.createElement(getComponent("home-categories"), {
           // ... custom props
         });
 
@@ -16,6 +21,7 @@ import homeBanner from "../../components/homeHero";
         return (
           <div>
             <div>{ homeHero }</div>
+            <div>{ homeCategories }</div>
             <div>{ customFooter }</div>
           </div>
       );
