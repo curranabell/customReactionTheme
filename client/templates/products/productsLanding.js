@@ -1,9 +1,11 @@
-import { Session } from "meteor/session";
-import { Template } from "meteor/templating";
 import { Reaction } from "/client/api";
 import { ReactionProduct } from "/lib/api";
+import { applyProductRevision } from "/lib/api/products";
 import { Products, Tags } from "/lib/collections";
+import { Session } from "meteor/session";
+import { Template } from "meteor/templating";
 import { ITEMS_INCREMENT } from "/client/config/defaults";
+import productFilter from "../../components/productFilter";
 
 /**
  * loadMoreProducts
@@ -37,8 +39,7 @@ function loadMoreProducts() {
   }
 }
 
-
-Template.productsLanding.onCreated(function () {
+Template.products.onCreated(function () {
   this.products = ReactiveVar();
   this.state = new ReactiveDict();
   this.state.setDefault({
@@ -46,6 +47,10 @@ Template.productsLanding.onCreated(function () {
     slug: "",
     canLoadMoreProducts: false
   });
+
+  // We're not ready to serve prerendered page until products have loaded
+  window.prerenderReady = false;
+
 
   // Update product subscription
   this.autorun(() => {
@@ -70,15 +75,19 @@ Template.productsLanding.onCreated(function () {
     this.state.set("slug", slug);
 
     const queryParams = Object.assign({}, tags, Reaction.Router.current().queryParams);
-    this.subscribe("Products", scrollLimit, queryParams);
+    const productsSubscription = this.subscribe("Products", scrollLimit, queryParams);
+
+    // Once our products subscription is ready, we are ready to render
+    if (productsSubscription.ready()) {
+      window.prerenderReady = true;
+    }
 
     // we are caching `currentTag` or if we are not inside tag route, we will
     // use shop name as `base` name for `positions` object
     const currentTag = ReactionProduct.getTag();
-    const products = Products.find({
-      ancestors: []
-      // keep this, as an example
-      // type: { $in: ["simple"] }
+    const productCursor = Products.find({
+      ancestors: [],
+      type: { $in: ["simple"] }
     }, {
       sort: {
         [`positions.${currentTag}.position`]: 1,
@@ -87,8 +96,15 @@ Template.productsLanding.onCreated(function () {
       }
     });
 
-    this.state.set("canLoadMoreProducts", products.count() >= Session.get("productScrollLimit"));
-    this.products.set(products.fetch());
+    const products = productCursor.map((product) => {
+      return applyProductRevision(product);
+    });
+
+    const sortedProducts = ReactionProduct.sortProducts(products, currentTag);
+
+    this.state.set("canLoadMoreProducts", productCursor.count() >= Session.get("productScrollLimit"));
+    this.products.set(sortedProducts);
+    Session.set("productGrid/products", sortedProducts);
   });
 
   this.autorun(() => {
@@ -99,13 +115,13 @@ Template.productsLanding.onCreated(function () {
   });
 });
 
-Template.productsLanding.onRendered(() => {
+Template.products.onRendered(() => {
   // run the above func every time the user scrolls
   $("#reactionAppContainer").on("scroll", loadMoreProducts);
   $(window).on("scroll", loadMoreProducts);
 });
 
-Template.productsLanding.helpers({
+Template.products.helpers({
   tag: function () {
     const id = Reaction.Router.getParam("_tag");
     return {
@@ -147,7 +163,7 @@ Template.productsLanding.helpers({
  * products events
  */
 
-Template.productsLanding.events({
+Template.products.events({
   "click #productListView": function () {
     $(".product-grid").hide();
     return $(".product-list").show();
@@ -167,3 +183,16 @@ Template.productsLanding.events({
     loadMoreProducts();
   }
 });
+
+//Add productFilter React Component in productsLanding Blaze Template
+
+Template.products.helpers({
+  productFilter() {
+    return productFilter;
+  }
+});
+
+Template.productsLanding.replaces("products");
+Template.productsLanding.inheritsHelpersFrom("products");
+Template.productsLanding.inheritsEventsFrom("products");
+Template.productsLanding.inheritsHooksFrom("products");
