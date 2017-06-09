@@ -5,6 +5,7 @@ import { Reaction } from "/client/api";
 import Logger from "/client/modules/logger";
 import { ReactionProduct } from "/lib/api";
 import Sortable from "sortablejs";
+import productFilter from "../../../components/productFilter";
 
 /**
  * productGrid helpers
@@ -125,6 +126,11 @@ Template.productGrid.helpers({
   }
 });
 
+Template.productGrid.helpers({
+  productFilter() {
+    return productFilter;
+  }
+});
 
 Template.customProductGrid.replaces("productGrid");
 Template.customProductGrid.inheritsHelpersFrom("productGrid");

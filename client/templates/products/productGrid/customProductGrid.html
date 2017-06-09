@@ -2,11 +2,12 @@
   <div class="container-main">
     <div class="row">
 
-      <div class="col-md-3">
+      <div class="col-md-2">
         <h1>Testing Testing</h1>
+        <div>{{> React component=productFilter }}</div>
       </div>
 
-      <div class="col-md-9">
+      <div class="col-md-10">
         <div class="product-grid">
           <ul class="product-grid-list list-unstyled" id="product-grid-list">
             {{#each products}}

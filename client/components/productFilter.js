@@ -117,7 +117,7 @@ class productFilter extends Component {
 }
 
 registerComponent({
-  name: "product-filter",
+  name: "productFilter",
   component: productFilter
 });
 
