@@ -15,23 +15,25 @@ import { registerComponent, getComponent } from "/imports/plugins/core/layout/li
         };
 
         return (
-          <div className="container" style={ containerStyles }>
-            <div className="row" style={ footerStyles }>
-              <div className="col-md-4">
-                <h3>COMPANY:</h3>
-                <p>HOME</p>
-                <p>ABOUT</p>
-              </div>
+          <div className="container-fluid" style={ containerStyles }>
+            <div className="container">
+              <div className="row" style={ footerStyles }>
+                <div className="col-md-4">
+                  <h3>COMPANY:</h3>
+                  <p>HOME</p>
+                  <p>ABOUT</p>
+                </div>
 
-              <div className="col-md-4">
-              <h3>CONTACT:</h3>
-              <p>CONTACT @ NATURALMEDICINEPHARMACY.COM</p>
-              <p>KILAUEA, HAWAII 96754 USA</p>
-              </div>
+                <div className="col-md-4">
+                <h3>CONTACT:</h3>
+                <p>CONTACT @ NATURALMEDICINEPHARMACY.COM</p>
+                <p>KILAUEA, HAWAII 96754 USA</p>
+                </div>
 
-              <div className="col-md-4">
-                <h3>NATURAL MEDICINE PHARMACY</h3>
-                <img src="/images/nalu-logo.png" />
+                <div className="col-md-4">
+                  <h3>NATURAL MEDICINE PHARMACY</h3>
+                  <img src="/images/nalu-logo.png" />
+                </div>
               </div>
             </div>
           </div>

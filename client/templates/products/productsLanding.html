@@ -1,7 +1,7 @@
 <template name="productsLanding">
   <div class="col-md-2">
-    <h1>Product Filter</h1>
-     <div>{{> React component=productFilterComponent }}</div>
+    <h3>Filter Results</h3>
+     {{> productsLandingFilters }}
   </div>
 
   <div class="col-md-10">
@@ -28,6 +28,10 @@
       </div>
     {{/if}}
   </div>
+</template>
+
+<template name="productsLandingFilters">
+  <div>{{> React component=productFilterComponent }}</div>
 </template>
 
 <template name="productListGridCustom">
