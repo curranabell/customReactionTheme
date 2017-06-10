@@ -10,7 +10,7 @@ import homeBanner from "./homeBanner";
           justifyContent: 'center',
           backgroundImage: "url(' /images/waterfall-full.jpeg ')",
           alignItems: 'center',
-          height: '94.9vh',
+          minHeight: '94.9vh',
           width: 'auto',
       };
 
