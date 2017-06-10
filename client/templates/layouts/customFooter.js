@@ -8,30 +8,34 @@ import { registerComponent, getComponent } from "/imports/plugins/core/layout/li
           color: '#000',
           paddingTop: 50,
           paddingBottom: 50,
+          justifyContent: 'center',
+          flex: 1,
         };
 
         const containerStyles = {
-            backgroundColor: '#f3f3f3',
+            backgroundColor: '#efefef',
+            display: 'flex',
+            flexWrap: 'wrap',
         };
 
         return (
           <div className="container-fluid" style={ containerStyles }>
-            <div className="container">
+            <div className="container-fluid">
               <div className="row" style={ footerStyles }>
-                <div className="col-md-4">
+                <div className="col-xs-4">
                   <h3>COMPANY:</h3>
                   <p>HOME</p>
                   <p>ABOUT</p>
                 </div>
 
-                <div className="col-md-4">
-                <h3>CONTACT:</h3>
-                <p>CONTACT @ NATURALMEDICINEPHARMACY.COM</p>
-                <p>KILAUEA, HAWAII 96754 USA</p>
+                <div className="col-xs-4">
+                  <h3>CONTACT:</h3>
+                  <p>CONTACT @ YOURDOMAINNAME.COM</p>
+                  <p>KAUAI, HAWAII 96754 USA</p>
                 </div>
 
-                <div className="col-md-4">
-                  <h3>NATURAL MEDICINE PHARMACY</h3>
+                <div className="col-xs-4">
+                  <h3>COMPANY LOGO HERE</h3>
                   <img src="/images/nalu-logo.png" />
                 </div>
               </div>

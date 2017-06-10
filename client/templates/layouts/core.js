@@ -4,7 +4,6 @@ import classnames from "classnames";
 import Blaze from "meteor/gadicc:blaze-react-component";
 import { Template } from "meteor/templating";
 import { registerComponent, getComponent } from "/imports/plugins/core/layout/lib/components";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 class coreLayoutMaterialTheme extends Component {
   static propTypes = {
@@ -15,7 +14,7 @@ class coreLayoutMaterialTheme extends Component {
   }
 
   render() {
-    const { layoutHeader, template } = this.props.structure || {};
+    const { layoutHeader, layoutFooter, template } = this.props.structure || {};
     const pageClassName = classnames({
       "page": true,
       "show-settings": this.props.actionViewIsOpen
@@ -31,7 +30,7 @@ class coreLayoutMaterialTheme extends Component {
     }
 
     return (
-    <MuiThemeProvider>
+
     <div className={pageClassName} id="reactionAppContainer">
      { Template[layoutHeader] &&
        <Blaze template={layoutHeader} className="reaction-navigation-header" />
@@ -40,7 +39,7 @@ class coreLayoutMaterialTheme extends Component {
      <Blaze template="cartDrawer" className="reaction-cart-drawer" />
 
      { Template[template] &&
-       <main>
+       <main className="mainStyles">
          <Blaze template={template} />
          <div>{ customFooter }</div>
        </main>
@@ -56,7 +55,7 @@ class coreLayoutMaterialTheme extends Component {
 
      {}
     </div>
-    </MuiThemeProvider>
+
     );
   }
 }
