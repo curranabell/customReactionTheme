@@ -53,7 +53,6 @@ class coreLayoutMaterialTheme extends Component {
        </main>
      }
 
-     {}
     </div>
 
     );

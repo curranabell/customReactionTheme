@@ -16,7 +16,7 @@ import homeBanner from "./homeBanner";
 
       const backgroundOverlay = {
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
-        height: '94.9vh',
+        minHeight: '94.9vh',
       };
 
       const homeBanner = React.createElement(getComponent("home-banner"), {
