@@ -9,7 +9,6 @@ import { registerComponent, getComponent } from "/imports/plugins/core/layout/li
           paddingTop: 50,
           paddingBottom: 50,
           justifyContent: 'center',
-          flex: 1,
         };
 
         const containerStyles = {

@@ -1,5 +1,6 @@
 import React from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
+import { Link } from "/client/api";
 
     const welcomeBanner = {
       display: 'flex',

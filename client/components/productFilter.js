@@ -33,9 +33,9 @@ class productFilter extends Component {
 
     return (
     <CardGroup>
-      <Card showSwitch={true} saveOpenStateToPreferences={false}>
+      <Card showSwitch={false} >
         <CardHeader title="Category" actAsExpander={true} />
-        <CardBody expandable={true}>
+        <CardBody expandable={true} expanded={false}>
           <List>
             <ListItem actionType="switch" label="Category 1" onSwitchChange={this.handleSwitchChange} switchOn={this.state.on}/>
             <ListItem actionType="switch" label="Category 2" onSwitchChange={this.handleSwitchChange} switchOn={this.state.on} />
@@ -45,7 +45,7 @@ class productFilter extends Component {
         </CardBody>
       </Card>
 
-      <Card showSwitch={true} saveOpenStateToPreferences={true}>
+      <Card showSwitch={true} >
         <CardHeader title="Company" actAsExpander={true} />
         <CardBody expandable={true}>
           <List>
