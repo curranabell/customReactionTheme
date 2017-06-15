@@ -11,7 +11,7 @@ class productFilter extends Component {
     super(props);
 
     this.state = {
-      checked: false
+      checked: true
     };
   }
 
@@ -37,7 +37,7 @@ class productFilter extends Component {
         <CardHeader title="Category" actAsExpander={true} />
         <CardBody expandable={true} expanded={false}>
           <List>
-            <ListItem actionType="switch" label="Category 1" onSwitchChange={this.handleSwitchChange} switchOn={this.state.on}/>
+            <ListItem actionType="switch" label="Category 1" onSwitchChange={this.handleSwitchChange} switchOn={true}/>
             <ListItem actionType="switch" label="Category 2" onSwitchChange={this.handleSwitchChange} switchOn={this.state.on} />
             <ListItem actionType="switch" label="Category 3" onSwitchChange={this.handleSwitchChange} switchOn={this.state.on} />
             <ListItem actionType="switch" label="Category 4" onSwitchChange={this.handleSwitchChange} switchOn={this.state.on} />

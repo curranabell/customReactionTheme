@@ -11,9 +11,9 @@ Reaction.registerPackage({
   autoEnable: true,
   registry: [
     {
-      route: "/about",
-      name: "about",
-      template: "aboutUs",
+      route: "/shop",
+      name: "shop",
+      template: "productsLanding",
       workflow: "coreWorkflow"
     }
   ],

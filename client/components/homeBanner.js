@@ -1,6 +1,6 @@
 import React from "react";
 import { registerComponent } from "/imports/plugins/core/layout/lib/components";
-import { Link } from "/client/api";
+import { Router, Link } from "/client/api";
 
     const welcomeBanner = {
       display: 'flex',
@@ -30,7 +30,7 @@ import { Link } from "/client/api";
         <div style={ messageStyles }>
           <h1>The Natural Medicine Pharmacy</h1>
           <h3>Natural Medicine Delivered To Your Door</h3>
-          <button className="btn" style={ buttonStyles }>SHOP NOW</button>
+          <Link to="productsLanding">SHOP NOW</Link>
         </div>
       </div>
     );
