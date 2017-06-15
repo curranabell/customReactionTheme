@@ -15,7 +15,8 @@ class productFilter extends TrackerReact(React.Component) {
    handlePriceChange = (values, handle, unencoded, tap, positions) => {
       console.log("slider changed", values);
       this.state.priceFilter=values;
-      console.log(JSON.stringify(this.state.searchCollection));
+      this.productResults();
+       console.log("Product Results:"+ JSON.stringify(this.state.productResults));
    };
 
    handleSlide = (values, handle, unencoded, tap, positions) => {
@@ -65,12 +66,15 @@ class productFilter extends TrackerReact(React.Component) {
   }
 
   render() {
+    this.state.productResults = ProductSearch.find().fetch();
 
     const sliderStyles = {
       padding: 24,
     };
 
   return (
+
+
       <CardGroup>
         <Card showSwitch={true} saveOpenStateToPreferences={false}>
           <CardHeader title="Category" actAsExpander={true}/>
