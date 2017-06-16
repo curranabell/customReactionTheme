@@ -14,7 +14,8 @@ class productFilter extends TrackerReact(React.Component) {
 
    handlePriceChange = (values, handle, unencoded, tap, positions) => {
       console.log("slider changed", values);
-      this.props.priceFilter=values;
+      this.state.priceFilter=values;
+      console.log("The props values:"+ this.state.priceFilter);
       this.productResults();
        console.log("Product Results:"+ JSON.stringify(this.state.productResults));
    };
@@ -33,7 +34,6 @@ class productFilter extends TrackerReact(React.Component) {
     const sub = Meteor.subscribe("SearchResults", searchCollection, searchQuery, facets);
     this.props.sortBy = Session.get("sortBy");
     this.props.productChoice = Session.get("productChoice");
-    this.props.priceFilter = Session.get("priceFilter");
 
 
     this.state = {
@@ -42,7 +42,8 @@ class productFilter extends TrackerReact(React.Component) {
       searchCollection: searchCollection,
       searchQuery: searchQuery,
       facets: facets,
-      productResults: []
+      productResults: [],
+      priceFilter: [0,1000000]
     };
   }
 
@@ -62,7 +63,10 @@ class productFilter extends TrackerReact(React.Component) {
 
 
   productResults() {
-    this.state.productResults = ProductSearch.find().fetch();
+
+    const lowPrice=this.state.priceFilter[0] || 0;
+    const highPrice=this.state.priceFilter[1] || 100000;
+    this.state.productResults = ProductSearch.find({"price.max": {$gt: lowPrice, $lt: highPrice} }).fetch();
   }
 
   render() {
