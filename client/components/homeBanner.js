@@ -30,7 +30,6 @@ import { Router, Link } from "/client/api";
         <div style={ messageStyles }>
           <h1>The Natural Medicine Pharmacy</h1>
           <h3>Natural Medicine Delivered To Your Door</h3>
-          <Link to="productsLanding">SHOP NOW</Link>
         </div>
       </div>
     );
